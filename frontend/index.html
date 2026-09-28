@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Docker Compose App</title>
+</head>
+
+<body>
+
+    <h1>Welcome to My Docker Compose Application</h1>
+
+    <p>Frontend is running with Nginx.</p>
+
+    <button onclick="getMessage()">Call Backend</button>
+
+    <p id="result"></p>
+
+    <script>
+        async function getMessage() {
+            const response = await fetch("/api");
+            const data = await response.text();
+
+            document.getElementById("result").innerText = data;
+        }
+    </script>
+
+</body>
+</html>
